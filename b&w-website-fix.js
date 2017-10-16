@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B&W webpage fix
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Fix for dull-looking black and white webpages.
 // @author       Porama Ruengrairatanaroj
 // @match        *://www.mkrestaurant.com/*
@@ -11,7 +11,6 @@
 // @match        *://www.bigc.co.th/*
 // @match        *://*.cpfreshmartshop.com/*
 // @match        *://scbsonline.settrade.com/*
-// @require      https://code.jquery.com/jquery-3.2.1.min.js
 // @grant        none
 // ==/UserScript==
 
