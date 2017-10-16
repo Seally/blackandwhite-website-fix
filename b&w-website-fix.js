@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B&W webpage fix
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Fix for dull-looking black and white webpages.
 // @author       Porama Ruengrairatanaroj
 // @match        *://www.mkrestaurant.com/*
@@ -19,30 +19,32 @@ window.addEventListener('load', function () {
 
     var grayscaleRegexMatch = /grayscale\([^)]*\)/g;
 
-    var unsetGrayscaleFilter = function (elem) {
+    var unsetGrayscaleFilter = function(elem) {
         if (elem === null) {
-            return false;
+            // return false;
+            return;
         }
 
         try {
             var elemStyle = window.getComputedStyle(elem);
-            var watchThis = false;
+            // var watchThis = false;
 
             if (elemStyle === null) {
-                return false;
+                // return false;
+                return;
             }
 
             if (elemStyle.filter.match(grayscaleRegexMatch).length > 0) {
                 elem.style.setProperty("filter", "unset", "important");
-                watchThis = true;
+                // watchThis = true;
             }
 
             if (elemStyle.webkitFilter.match(grayscaleRegexMatch).length > 0) {
                 elem.style.setProperty("-webkit-filter", "unset", "important");
-                watchThis = true;
+                // watchThis = true;
             }
 
-            return watchThis;
+            // return watchThis;
         } catch (e) {
             console.log("Failed to process: " + elem);
         }
